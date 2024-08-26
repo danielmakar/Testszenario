@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Erfolgskriterium 2.5.7</title>
+  </head>
+  <body>
+    <h1>Erfolgskriterium 2.5.7</h2>
+    <div>
+      <!-- F108: https://www.w3.org/WAI/WCAG22/Techniques/failures/F108.html -->
+      <h2>Liste kann nur durch Pointer reorganisiert werden</h2>
+      <div class="sortable-list">
+        <ul id="sortable">
+          <li draggable="true">Item 1</li>
+          <li draggable="true">Item 2</li>
+          <li draggable="true">Item 3</li>
+        </ul>
+      </div>
+    </div>
+  </body>
+  <script>
+    // https://www.geeksforgeeks.org/create-a-drag-and-drop-sortable-list-using-html-css-javascript/
+    const sortableList = document.getElementById("sortable");
+    let draggedItem = null;
+
+    sortableList.addEventListener("dragstart", (e) => {
+      draggedItem = e.target;
+      setTimeout(() => {
+        e.target.style.display = "none";
+      }, 0);
+    });
+
+    sortableList.addEventListener("dragend", (e) => {
+      setTimeout(() => {
+        e.target.style.display = "";
+        draggedItem = null;
+      }, 0);
+    });
+
+    sortableList.addEventListener("dragover", (e) => {
+      e.preventDefault();
+      const afterElement = getDragAfterElement(sortableList, e.clientY);
+      const currentElement = document.querySelector(".dragging");
+      if (afterElement == null) {
+        sortableList.appendChild(draggedItem);
+      } else {
+        sortableList.insertBefore(draggedItem, afterElement);
+      }
+    });
+
+    const getDragAfterElement = (container, y) => {
+      const draggableElements = [
+        ...container.querySelectorAll("li:not(.dragging)"),
+      ];
+
+      return draggableElements.reduce(
+        (closest, child) => {
+          const box = child.getBoundingClientRect();
+          const offset = y - box.top - box.height / 2;
+          if (offset < 0 && offset > closest.offset) {
+            return {
+              offset: offset,
+              element: child,
+            };
+          } else {
+            return closest;
+          }
+        },
+        {
+          offset: Number.NEGATIVE_INFINITY,
+        }
+      ).element;
+    };
+  </script>
+</html>

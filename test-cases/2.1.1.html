@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Erfolgskriterium 2.1.1</title>
+  </head>
+  <body>
+    <h1>Erfolgskriterium 2.1.1</h1>
+    <div>
+      <!-- https://www.w3.org/WAI/standards-guidelines/act/rules/akn7bn/ -->
+      <h2>iframe ist ausgeschlossen aus Tabreihenfolge</h2>
+      <iframe tabindex="-1" srcdoc="<a href='/'>Home</a>"></iframe>
+    </div>
+
+    <div>
+      <!-- F54: https://www.w3.org/WAI/WCAG22/Techniques/failures/F54.html -->
+      <h2>Nutzen von Zeiger-Event-Handlern</h2>
+      <p>
+        <img onmousedown="show();" src="nextarrow.gif" alt="Go to next page" />
+      </p>
+    </div>
+  </body>
+  <script>
+    const show = () => {
+      window.alert("Testnachricht");
+    };
+  </script>
+</html>

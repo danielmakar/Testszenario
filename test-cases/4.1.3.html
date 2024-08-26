@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Erfolgskriterium 4.1.3</title>
+  </head>
+  <body>
+    <h1>Erfolgskriterium 4.1.3</h1>
+    <!-- F103: https://www.w3.org/WAI/WCAG22/Techniques/failures/F103.html -->
+    <div>
+      <h2>Darstellung des Suchergebnisses ohne role="status"</h2>
+      <label for="search"
+        >Sucheingabe: <input type="text" id="search" name="search" value="test"
+      /></label>
+      <button onclick="findResults()">Suche</button>
+      <span id="results"></span>
+    </div>
+  </body>
+  <script>
+    function findResults() {
+      document.getElementById("results").innerText =
+        "Keine Ergebnisse gefunden";
+    }
+  </script>
+</html>

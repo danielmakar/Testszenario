@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Erfolgskriterium 2.5.2</title>
+  </head>
+  <body>
+    <h1>Erfolgskriterium 2.5.2</h1>
+    <div>
+      <!-- F101: https://www.w3.org/WAI/WCAG22/Techniques/failures/F101.html -->
+      <h2>Button zur Aktivierung beim down-Event</h2>
+      <button id="open">Open</button>
+    </div>
+  </body>
+  <script>
+    const trigger = document.getElementById("open");
+
+    function openAlert() {
+      window.alert("Test");
+    }
+
+    trigger.addEventListener("mousedown", openAlert);
+    trigger.addEventListener("touchstart", openAlert);
+    trigger.addEventListener("pointerdown", openAlert);
+  </script>
+</html>

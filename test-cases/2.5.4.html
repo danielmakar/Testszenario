@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Erfolgskriterium 2.5.4</title>
+  </head>
+  <body>
+    <h1>Erfolgskriterium 2.5.4</h1>
+    <div>
+      <!-- F106: https://www.w3.org/WAI/WCAG22/Techniques/failures/F106.html -->
+      <h2>Slider kann durch Orientierung des Smartphones angepasst werden</h2>
+      <div class="slidecontainer">
+        <button type="button" name="decrease" onclick="decreaseFunction()">
+          Decrease Value
+        </button>
+        <input
+          type="range"
+          min="1"
+          max="100"
+          value="50"
+          class="slider"
+          id="motionSlider"
+        />
+        <button type="button" name="increase" onclick="increaseFunction()">
+          Increase Value
+        </button>
+        <p aria-live="polite">Slider Value: <span id="demo">56</span></p>
+      </div>
+    </div>
+  </body>
+  <script>
+    // https://www.w3.org/WAI/WCAG22/working-examples/device-motion-sensor-input-failure/
+    var slider = document.getElementById("motionSlider");
+    var output = document.getElementById("demo");
+    output.innerHTML = slider.value;
+    slider.oninput = function () {
+      output.innerHTML = this.value;
+    };
+
+    function increaseFunction() {
+      slider.value++;
+      output.innerHTML = slider.value;
+    }
+    function decreaseFunction() {
+      slider.value--;
+      output.innerHTML = slider.value;
+    }
+
+    //slider motion detection
+    function handleOrientation(event) {
+      var x = event.gamma;
+
+      if (x > 20) {
+        slider.value++;
+        output.innerHTML = slider.value;
+      } else if (x < -20) {
+        slider.value--;
+        output.innerHTML = slider.value;
+      }
+    }
+
+    window.addEventListener("deviceorientation", handleOrientation);
+  </script>
+</html>

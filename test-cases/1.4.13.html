@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Erfolgskriterium 1.4.13</title>
+  </head>
+  <style>
+    .tooltip {
+      position: relative;
+      display: inline-block;
+      border-bottom: 1px dotted black;
+    }
+
+    .tooltip .tooltiptext {
+      visibility: hidden;
+      width: 320px;
+      background-color: black;
+      color: #fff;
+      text-align: center;
+      border-radius: 6px;
+      padding: 5px 0;
+
+      /* Position the tooltip */
+      position: absolute;
+      z-index: 1;
+    }
+
+    .tooltip:hover .tooltiptext {
+      visibility: visible;
+    }
+
+    .tooltiptext:hover {
+      visibility: hidden;
+    }
+
+    .focusable:focus .tooltiptext {
+      visibility: visible;
+    }
+  </style>
+  <body>
+    <h1>Erfolgskriterium 1.4.13</h1>
+    <div>
+      <h2>Hover verdeckt anderes Element</h2>
+      <div class="tooltip">
+        <a href="../test.html" class="focusable">Hover over me</a>
+        <span class="tooltiptext">Tooltip text</span>
+      </div>
+      <span>Verdecktes Element</span>
+    </div>
+  </body>
+  <script>
+    var focusable = document.querySelector('.focusable')
+    focusable.addEventListener('focus', function() {
+      document.querySelector('.tooltiptext').style.visibility = 'visible'
+    })
+    focusable.addEventListener('blur', function() {
+      document.querySelector('.tooltiptext').style.visibility = 'hidden'
+    })
+  </script>
+</html>
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hover Beispiel</title>
+<style>
+  /* Grundstil für die Elemente */
+  .original, .hover-element {
+    width: 200px;
+    height: 200px;
+    text-align: center;
+    line-height: 200px;
+    margin: 10px;
+  }
+
+  .original {
+    background-color: lightblue;
+    position: relative;
+  }
+
+  .hover-element {
+    background-color: lightcoral;
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+</style>
+</head>
+<body>
+
+<div class="original" id="original">
+  Original Element
+  <div class="hover-element" id="hoverElement">
+    Hover Element
+  </div>
+</div>
+
+<script>
+  document.getElementById('original').addEventListener('mouseenter', function() {
+    document.getElementById('hoverElement').style.display = 'block';
+  });
+
+  document.getElementById('original').addEventListener('mouseleave', function() {
+    setTimeout(function() {
+      var hoverElement = document.getElementById('hoverElement');
+      if (!hoverElement.matches(':hover')) {
+        hoverElement.style.display = 'none';
+      }
+    }, 100);
+  });
+
+  document.getElementById('hoverElement').addEventListener('mouseenter', function() {
+    this.style.display = 'none';
+  });
+</script>
+
+</body>
+</html> -->

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Erfolgskriterium 3.3.1</title>
+  </head>
+  <style>
+    .form1 input:valid {
+      border: 2px solid green;
+    }
+
+    .form1 input:invalid {
+      border: 2px solid red;
+    }
+  </style>
+  <body>
+    <h1>Erfolgskriterium 3.3.1</h1>
+    <div>
+      <!-- https://www.w3.org/WAI/standards-guidelines/act/rules/36b590/proposed/ -->
+      <h2>Falsche Eingabe wird nur farblich dargestellt</h2>
+      <form class="form1" novalidate="">
+        <label for="name">Name: </label>
+        <input
+          name="name"
+          id="name"
+          type="text"
+          placeholder="Eingabe"
+          autocomplete="given-name"
+        />
+        <label for="mail">E-Mail: </label>
+        <input
+          name="mail"
+          id="mail"
+          type="email"
+          placeholder="Eingabe"
+          required=""
+          autocomplete="email"
+        />
+        <input type="submit" value="Absenden" />
+      </form>
+    </div>
+  </body>
+</html>

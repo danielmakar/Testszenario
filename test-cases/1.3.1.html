@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Erfolgskriterium 1.3.1</title>
+  </head>
+  <style>
+    .heading {
+      font-family: Times, serif;
+      font-size: 200%;
+      font-weight: bold;
+    }
+  </style>
+  <body>
+    <h1>Erfolgskriterium 1.3.1</h1>
+    <div>
+      <!-- F2: https://www.w3.org/WAI/WCAG22/Techniques/failures/F2.html -->
+      <h2>p-Element mit CSS wie heading aussehen lassen</h2>
+      <p class="heading">Überschrift</p>
+    </div>
+
+    <div>
+      <!-- F48: https://www.w3.org/WAI/WCAG22/Techniques/failures/F48.html -->
+      <h2>pre-Element mit Tabs zur Darstellung von Tabellen</h2>
+      <pre>
+        Monday   Tuesday     Wednesday      Thursday         Friday
+8:00-
+9:00	          Meet with Sam
+9:00-
+10:00    		      Dr. Williams   Sam again        Leave for San Antonio
+      </pre>
+    </div>
+
+    <div>
+      <!-- F91: https://www.w3.org/WAI/WCAG22/Techniques/failures/F91.html -->
+      <h2>Tabelle mit Headern, die nicht als solche gekennzeichnet sind</h2>
+      <table>
+        <tr>
+          <td>Name</td>
+          <td>Age</td>
+          <td>Height</td>
+        </tr>
+        <tr>
+          <td>Max</td>
+          <td>21</td>
+          <td>175</td>
+        </tr>
+      </table>
+    </div>
+
+    <div>
+      <!-- https://www.w3.org/WAI/standards-guidelines/act/rules/d0f69e/proposed/ -->
+      <h2>Tabelle mit leerem Datenfeld zu einem Header</h2>
+      <table>
+        <tr>
+          <th>Name</th>
+          <th>Age</th>
+          <th>Height</th>
+        </tr>
+        <tr>
+          <td>Max</td>
+          <td>21</td>
+        </tr>
+      </table>
+    </div>
+
+    <div>
+      <!-- F90: https://www.w3.org/WAI/WCAG22/Techniques/failures/F90.html -->
+      <h2>
+        Tabelle mit td-Elementen die auf nicht existierende Header verweisen
+      </h2>
+      <table>
+        <tr>
+          <th id="header1">Name</th>
+          <th id="header2">Age</th>
+          <th id="header3">Height</th>
+        </tr>
+        <tr>
+          <td headers="head1">Max</td>
+          <td headers="head2">21</td>
+          <td headers="head3">175</td>
+        </tr>
+      </table>
+    </div>
+
+    <div>
+      <!-- https://www.w3.org/WAI/standards-guidelines/act/rules/bc4a75/proposed/ -->
+      <h2>Element mit der Rolle list besitzt Element, dass kein listitem ist</h2>
+      <div role="list">
+        <span>Item 1</span>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Erfolgskriterium 1.1.1</title>
+  </head>
+  <body>
+    <h1>Erfolgskriterium 1.1.1</h1>
+
+    <div>
+      <!-- F56: https://www.w3.org/WAI/WCAG22/Techniques/failures/F65.html -->
+      <h2>Bild ohne alt-Attribut</h2>
+      <img
+        src="https://cdn.worldofflowers.eu/imgproxy/b9YCHOFK09Lb5du_biqzNPHaqowUGAydpOZozyHkK4E/rs:fit:300:300:0:1/g:sm/plain/media/productphotos/10718.jpg"
+      />
+    </div>
+
+    <div>
+      <!-- F38: https://www.w3.org/WAI/WCAG22/Techniques/failures/F38.html -->
+      <h2>Dekoratives Bild mit alt-Attribut</h2>
+      <img
+        src="https://cdn.worldofflowers.eu/imgproxy/b9YCHOFK09Lb5du_biqzNPHaqowUGAydpOZozyHkK4E/rs:fit:300:300:0:1/g:sm/plain/media/productphotos/10718.jpg"
+        alt="image"
+      />
+    </div>
+
+    <div>
+      <!-- F65: https://www.w3.org/WAI/WCAG22/Techniques/failures/F65.html -->
+      <h2>Input ohne alt-Atttribut</h2>
+      <input type="image" />
+    </div>
+
+    <div>
+      <!-- F30: https://www.w3.org/WAI/WCAG22/Techniques/failures/F30.html -->
+      <h2>Bild mit Dateinamen als alt-Attribut</h2>
+      <img src="image.jpg" alt="image.jpg" />
+    </div>
+
+    <div>
+      <!-- F71: https://www.w3.org/WAI/WCAG22/Techniques/failures/F71.html -->
+      <h2>Textnachbildung ohne Textalternative</h2>
+      <p>&#x03F2;&#x043E;&#x03BF;&#x006B;</p>
+    </div>
+  </body>
+</html>

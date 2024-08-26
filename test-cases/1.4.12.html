@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Erfolgskriterium 1.4.12</title>
+  </head>
+  <body>
+    <h1>Erfolgskriterium 1.4.12</h1>
+    <div>
+      <!-- F104: https://www.w3.org/WAI/WCAG22/Techniques/failures/F104.html -->
+      <h2>Text in einer Box mit letter-spacing</h2>
+      <div
+        style="
+          font-size: 100%;
+          width: 130px;
+          height: 95px;
+          overflow: hidden;
+          border: thin solid gray;
+        "
+      >
+        <p style="letter-spacing: 10px">
+          Das ist ein Beispieltext auf den spacing angewendet wurde.
+        </p>
+      </div>
+    </div>
+
+    <div>
+      <!-- https://www.w3.org/WAI/standards-guidelines/act/rules/24afc2/ -->
+      <h2>Text mit zu geringem letter-spacing</h2>
+      <p style="letter-spacing: 0.1em !important">
+        Das ist ein Beispieltext auf den spacing angewendet wurde.
+      </p>
+    </div>
+
+    <div>
+      <!-- https://www.w3.org/WAI/standards-guidelines/act/rules/78fd32/ -->
+      <h2>Text mit zu geringem line-height</h2>
+      <p style="line-height: 1em !important; max-width: 200px">
+        Das ist ein Beispieltext auf den spacing angewendet wurde.
+      </p>
+    </div>
+
+    <div>
+      <!-- https://www.w3.org/WAI/standards-guidelines/act/rules/9e45ec/ -->
+      <h2>Text mit zu geringem word-spacing</h2>
+      <p style="word-spacing: 0.1em !important">
+        Das ist ein Beispieltext auf den spacing angewendet wurde.
+      </p>
+    </div>
+  </body>
+</html>

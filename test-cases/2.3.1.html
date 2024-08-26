@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Erfolgskriterium 2.3.1</title>
+  </head>
+  <body>
+    <h1>Erfolgskriterium 2.3.1</h1>
+    <div>
+      <h2>Inhalt der mehr als drei Mal pro Sekunde blinkt</h2>
+      <p id="blink2">Dieser Text blinkt mehr als drei Mal pro Sekunde</p>
+    </div>
+  </body>
+  <script>
+    var blink2 = document.getElementById("blink2");
+    setInterval(function () {
+      blink2.style.background =
+        blink2.style.background == "white" ? "black" : "white";
+    }, 200);
+  </script>
+</html>

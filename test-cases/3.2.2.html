@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Erfolgskriterium 3.2.2</title>
+  </head>
+  <body>
+    <h1>Erfolgskriterium 3.2.2</h1>
+    <div>
+      <!-- F36: https://www.w3.org/WAI/WCAG22/Techniques/failures/F36.html -->
+      <h2>
+        Formular wird automatisch abgeschickt, sobald letzter Input getätigt
+        wurde
+      </h2>
+      <form method="get" id="form1">
+        <input type="text" name="text1" size="3" maxlength="3" /> -
+        <input type="text" name="text2" size="3" maxlength="3" /> -
+        <input
+          type="text"
+          name="text3"
+          size="4"
+          maxlength="4"
+          onchange="form1.submit();"
+        />
+      </form>
+    </div>
+  </body>
+</html>

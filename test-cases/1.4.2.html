@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Erfolgskriterium 1.4.2</title>
+  </head>
+  <body>
+    <h1>Erfolgskriterium 1.4.2</h1>
+    <div>
+      <!-- F23: https://www.w3.org/WAI/WCAG22/Techniques/failures/F23.html -->
+      <h2>Audioelement ohne ausschaltbaren Sound</h2>
+      <audio id="audio" loop="true" autoplay="true">
+        <source src="../test-audio.m4a" type="audio/mpeg" />
+      </audio>
+    </div>
+
+    <div>
+      <!-- F93: https://www.w3.org/WAI/WCAG22/Techniques/failures/F93.html -->
+      <h2>Videoelement ohne Schaltflächen</h2>
+      <video id="video" width="520" height="340" autoplay="true" loop="true">
+        <source src="../test-video.mp4" type="video/mp4" />
+      </video>
+    </div>
+  </body>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      var audio = document.getElementById('audio');
+      audio.play().catch(function(error) {
+        console.log('Autoplay (audio) was prevented:', error);
+      });
+
+      var video = document.getElementById('video');
+      video.play().catch(function(error) {
+        console.log('Autoplay (video) was prevented:', error);
+      });
+    });
+  </script>
+</html>

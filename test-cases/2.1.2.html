@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Erfolgskriterium 2.1.2</title>
+  </head>
+  <body>
+    <h1>Erfolgskriterium 2.1.2</h1>
+    <div>
+      <!-- https://www.w3.org/WAI/standards-guidelines/act/rules/80af7b/proposed/ -->
+      <!-- F10: https://www.w3.org/WAI/WCAG22/Techniques/failures/F10.html -->
+      <h2>Fokussierbares Element mit Keyboard Trap</h2>
+      <a href="#">Link 1</a>
+      <button onblur="setTimeout(() => this.focus(), 10)">Button</button>
+      <a href="#">Link 2</a>
+    </div>
+  </body>
+</html>

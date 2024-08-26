@@ -1,0 +1,1028 @@
+<!DOCTYPE html>
+<html xml:lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0 user-scalable=no" http-equiv="refresh"/>
+    <title>
+      
+    </title>
+  </head>
+  <style>
+    .container {
+      padding: 10px;
+      border: 2px solid black;
+      margin-bottom: 10px;
+    }
+
+    .heading {
+      font-family: Times, serif;
+      font-size: 200%;
+      font-weight: bold;
+    }
+
+    .a1 {
+      text-decoration: none;
+    }
+
+    .a2 {
+      border: medium solid black;
+    }
+
+    .tooltip {
+    position: relative;
+    display: inline-block;
+    border-bottom: 1px dotted black;
+    }
+
+    .tooltip .tooltiptext {
+      visibility: hidden;
+      width: 320px;
+      background-color: black;
+      color: #fff;
+      text-align: center;
+      border-radius: 6px;
+      padding: 5px 0;
+
+      /* Position the tooltip */
+      position: absolute;
+      z-index: 1;
+    }
+
+    .tooltip:hover .tooltiptext {
+      visibility: visible;
+    }
+
+    .pagination li {
+      display: inline-block; 
+      min-height: 20px;
+      min-width: 20px;
+    }
+
+    .form1 input:valid {
+      border: 2px solid green;
+    }
+
+    .form1 input:invalid {
+      border: 2px solid red;
+    }
+
+    @media (orientation: landscape) {
+				.p1 {
+					transform: matrix3d(0, -1, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+				}
+			}
+  </style>
+  <body onload="load();">
+    <h1>Fehlerkatalog</h1>
+
+    <h2><a href="test-cases/1.1.1.html">Erfolgskriterium 1.1.1</a></h2>
+    <div class="container">
+      <div>
+        <h3>Bild ohne alt-Attribut</h3>
+        <img
+          src="https://cdn.worldofflowers.eu/imgproxy/b9YCHOFK09Lb5du_biqzNPHaqowUGAydpOZozyHkK4E/rs:fit:300:300:0:1/g:sm/plain/media/productphotos/10718.jpg"
+        />
+      </div>
+  
+      <div>
+        <h3>Dekoratives Bild mit alt-Attribut</h3>
+        <img
+          src="https://cdn.worldofflowers.eu/imgproxy/b9YCHOFK09Lb5du_biqzNPHaqowUGAydpOZozyHkK4E/rs:fit:300:300:0:1/g:sm/plain/media/productphotos/10718.jpg"
+          alt="image"
+        />
+      </div>
+  
+      <div>
+        <h3>Input ohne alt-Atttribut</h3>
+        <input type="image" />
+      </div>
+  
+      <div>
+        <h3>Bild mit Dateinamen als alt-Attribut</h3>
+        <img src="image.jpg" alt="image.jpg" />
+      </div>
+  
+      <div>
+        <h3>Textnachbildung ohne Textalternative</h3>
+        <p>&#x03F2;&#x043E;&#x03BF;&#x006B;</p>
+      </div>
+    </div>
+
+    <h2><a href="test-cases/1.2.1.html">Erfolgskriterium 1.2.1</a></h2>
+    <div class="container">
+      <div>
+        <h3>Audioelement ohne Textalternative</h3>
+        <audio controls>
+          <source src="../test-audio.m4a" type="audio/mpeg" />
+        </audio>
+      </div>
+  
+      <div>
+        <h3>Videoelement ohne Transkript</h3>
+        <video width="520" height="340" controls>
+          <source src="test-video.mp4" type="video/mp4" />
+        </video>
+      </div>
+    </div>
+
+    <h2><a href="test-cases/1.2.2.html">Erfolgskriterium 1.2.2</a></h2>
+    <div class="container">
+      <h3>Videoelement ohne Untertitel</h3>
+      <video width="520" height="340" controls>
+        <source src="test-video.mp4" type="video/mp4" />
+      </video>
+    </div>
+
+    <h2><a href="test-cases/1.2.3.html">Erfolgskriterium 1.2.3</a></h2>
+    <div class="container">
+      <h3>Videoelement ohne Audiodeskription</h3>
+      <video width="520" height="340" controls>
+        <source src="test-video2.mp4" type="video/mp4" />
+      </video>
+    </div>
+
+    <h2><a href="test-cases/1.2.4.html">Erfolgskriterium 1.2.4</a></h2>
+    <div class="container">
+      <p>
+        Diese Kriterium kann nicht überprüft werden, da kein Live-Video zur
+        Verfügung gestellt werden kann.
+      </p>
+    </div>
+
+    <h2><a href="test-cases/1.2.5.html">Erfolgskriterium 1.2.5</a></h2>
+    <div class="container">
+      <h3>Videoelement ohne Audiodeskription</h3>
+      <video width="520" height="340" controls>
+        <source src="test-video2.mp4" type="video/mp4" />
+      </video>
+    </div>
+
+    <h2><a href="test-cases/1.3.1.html">Erfolgskriterium 1.3.1</a></h2>
+    <div class="container">
+      <div>
+        <h3>p-Element mit CSS wie heading aussehen lassen</h3>
+        <p class="heading">Überschrift</p>
+      </div>
+  
+      <div>
+        <h3>pre-Element mit Tabs zur Darstellung von Tabellen</h3>
+        <pre>
+          Monday   Tuesday     Wednesday      Thursday         Friday
+  8:00-
+  9:00	          Meet with Sam
+  9:00-
+  10:00    		      Dr. Williams   Sam again        Leave for San Antonio
+        </pre>
+      </div>
+  
+      <div>
+        <h3>Tabelle mit Headern, die nicht als solche gekennzeichnet sind</h3>
+        <table>
+          <tr>
+            <td>Name</td>
+            <td>Age</td>
+            <td>Height</td>
+          </tr>
+          <tr>
+            <td>Max</td>
+            <td>21</td>
+            <td>175</td>
+          </tr>
+        </table>
+      </div>
+  
+      <div>
+        <h3>Tabelle mit leerem Datenfeld zu einem Header</h3>
+        <table>
+          <tr>
+            <td>Name</td>
+            <td>Age</td>
+            <td>Height</td>
+          </tr>
+          <tr>
+            <td>Max</td>
+            <td>21</td>
+          </tr>
+        </table>
+      </div>
+  
+      <div>
+        <h3>
+          Tabelle mit td-Elementen die auf nicht existierende Header verweisen
+        </h3>
+        <table>
+          <tr>
+            <td id="header1">Name</td>
+            <td id="header2">Age</td>
+            <td id="header3">Height</td>
+          </tr>
+          <tr>
+            <td headers="head1">Max</td>
+            <td headers="head2">21</td>
+            <td headers="head3">175</td>
+          </tr>
+        </table>
+      </div>
+  
+      <div>
+        <h3>Element mit list-role besitzt Element, dass kein listitem ist</h3>
+        <div role="list">
+          <span>Item 1</span>
+        </div>
+      </div>
+    </div>
+
+    <h2><a href="test-cases/1.3.2.html">Erfolgskriterium 1.3.2</a></h2>
+    <div class="container">
+      <div>
+        <h3>Leerzeichen in der Mitte eines Wortes</h3>
+        <h4>H&nbsp;E&nbsp;L&nbsp;L&nbsp;O</h4>
+      </div>
+  
+      <div>
+        <h3>Leerzeichen zur Darstellung einer Tabelle</h3>
+  Menu
+          Breakfast        Lunch           Dinner
+  
+  Monday   2 fried eggs    tomato soup     garden salad
+          bacon           hamburger       Fried Chicken
+          toast           onion rings     green beans
+                          Oatmeal cookie  mashed potatoes
+  
+  Tuesday   Pancakes       vegetable soup  Caesar salad
+           sausage        hot dogs        Spaghetti with meatballs
+           orange juice   potato salad    Italian bread
+                          brownie         ice cream
+      </div>
+    </div>
+
+    <h2><a href="test-cases/1.3.3.html">Erfolgskriterium 1.3.3</a></h2>
+    <div class="container">
+      <h3>
+        Auf der linken Seite befindet sich der Link zur vorherigen Aufgabe
+      </h3>
+      <a href="1.3.2.html" style="float: left">Link 1</a>
+      <a href="1.3.4.html" style="float: right">Link 2</a>
+    </div>
+
+    <h2><a href="test-cases/1.3.4.html">Erfolgskriterium 1.3.4</a></h2>
+    <div class="container">
+      <h3>p-Element wird auf Hochformat beschränkt</h3>
+      <p class="p1">Textparagraph</p>
+    </div>
+
+    <h2><a href="test-cases/1.3.5.html">Erfolgskriterium 1.3.5</a></h2>
+    <div class="container">
+      <h3>Falsche auto-complete Werte</h3>
+      <label>Username<input autocomplete="badname"/></label>
+      <label>Photo<input autocomplete="work photo"/></label>
+      <label>Email<input autocomplete="work,email"/></label>
+    </div>
+
+    <h2><a href="test-cases/1.4.1.html">Erfolgskriterium 1.4.1</a></h2>
+    <div class="container">
+      <h3>Links ohne Unterstrich mit gleicher Farbe wie Text</h3>
+      <p>Die ist ein Text der einen <a class="a1">Link</a> beinhaltet</p>
+    </div>
+
+    <h2><a href="test-cases/1.4.2.html">Erfolgskriterium 1.4.2</a></h2>
+    <div class="container">
+      <div>
+        <h3>Audioelement ohne ausschaltbaren Sound</h3>
+        <audio autoplay src="test-audio.m4a"></audio>
+      </div>
+  
+      <div>
+        <h3>Videoelement ohne Schaltflächen</h3>
+        <video width="520" height="340" autoplay loop>
+          <source src="test-video.mp4" type="video/mp4" />
+        </video>
+      </div>
+    </div>
+
+    <h2><a href="test-cases/1.4.3.html">Erfolgskriterium 1.4.3</a></h2>
+    <div class="container">
+      <h3>Grauer Text mit einem Kontrast von 2.3:1 auf weißem Hintergrund</h3>
+      <p style="color: #AAA; background: white;">
+        Text mit falschem Kontrast
+      </p>
+    </div>
+
+    <h2><a href="test-cases/1.4.4.html">Erfolgskriterium 1.4.4</a></h2>
+    <div class="container">
+      <div>
+        <h3>Überlaufender Text</h3>
+        <div style="font-size:100%; max-width:20vh; max-height:20vh; border: thin solid black;"> 
+          Dies ist ein beispielhafter Text und er muss deutlich länger sein, damit es zu einem Problem kommt.
+        </div>
+        <p>Anderer Text der den vorherigen überschreibt.</p>
+      </div>
+  
+      <div>
+        <h3>Formular-Elemente skalieren nicht mit</h3>
+        <div>
+          <label style="font-size: 1em;" for="fname">First Name</label>
+          <input style="font-size: 1vh;" type="text" name="fname" id="fname">
+          <input style="font-size: 1vh" type="submit" name="Submit" value="Submit" id="Submit">
+        </div>
+      </div>
+  
+      <div>
+        <h3>Viewport zur Skalierung des Textes</h3>
+        <p style="font-size: 1vh">Text skaliert mit Viewport</p>
+      </div>
+  
+      <div>
+        <h3>Nicht skalierbarer Viewport</h3>
+      </div>
+    </div>
+
+    <h2><a href="test-cases/1.4.5.html">Erfolgskriterium 1.4.5</a></h2>
+    <div class="container">
+      <h3>Referenziertes Bild enthält nicht relevanten Text</h3>
+      <input type="image" src="https://cdn.worldofflowers.eu/imgproxy/b9YCHOFK09Lb5du_biqzNPHaqowUGAydpOZozyHkK4E/rs:fit:300:300:0:1/g:sm/plain/media/productphotos/10718.jpg" alt="Click me" />
+    </div>
+
+    <h2><a href="test-cases/1.4.10.html">Erfolgskriterium 1.4.10</a></h2>
+    <div class="container">
+      <h3>Text ist beim Zoomen nicht mehr lesbar</h3>
+      <span style="white-space: nowrap">
+        Langer Text der beim Zoomen nicht mehr lesbar sein wird, weil die
+        Zeilenlänge überschritten wird. Das ist ein beispielhafter Text.
+      </span>
+    </div>
+
+    <h2><a href="test-cases/1.4.11.html">Erfolgskriterium 1.4.11</a></h2>
+    <div class="container">
+      <h3>Nicht genügend Kontrast um Fokus zu erkennen</h3>
+      <a class="a2" href="https://hbrs.de">Link</a>
+    </div>
+
+    <h2><a href="test-cases/1.4.12.html">Erfolgskriterium 1.4.12</a></h2>
+    <div class="container">
+      <div>
+        <h3>Text in einer Box mit letter-spacing</h3>
+        <div style="font-size:100%; width:130px;
+                    height:95px; overflow:hidden; border:thin solid gray;">
+          <p style="letter-spacing: 10px;">Das ist ein Beispieltext auf den spacing angewendet wurde.</p>
+        </div>
+      </div>
+  
+      <div>
+        <h3>Text mit zu geringem letter-spacing</h3>
+        <p style="letter-spacing: 0.1em !important">
+          Das ist ein Beispieltext auf den spacing angewendet wurde.
+        </p>
+      </div>
+  
+      <div>
+        <h3>Text mit zu geringem line-height</h3>
+        <p style="line-height: 1em !important; max-width: 200px;">
+          Das ist ein Beispieltext auf den spacing angewendet wurde.
+        </p>
+      </div>
+  
+      <div>
+        <h3>Text mit zu geringem word-spacing</h3>
+        <p style="word-spacing: 0.1em !important">
+          Das ist ein Beispieltext auf den spacing angewendet wurde.
+        </p>
+      </div>
+    </div>
+
+    <h2><a href="test-cases/1.4.13.html">Erfolgskriterium 1.4.13</a></h2>
+    <div class="container">
+      <h3>Hover verdeckt anderes Element</h3>
+      <div class="tooltip">
+        <a href="../test.html" class="focusable">Hover over me</a>
+        <span class="tooltiptext">Tooltip text</span>
+      </div>
+      <span>Verdecktes Element</span>
+    </div>
+
+    <h2><a href="test-cases/2.1.1.html">Erfolgskriterium 2.1.1</a></h2>
+    <div class="container">
+      <div>
+        <h3>iframe ist ausgeschlossen aus Tabreihenfolge</h3>
+        <iframe tabindex="-1" srcdoc="<a href='/'>Home</a>"></iframe>
+      </div>
+  
+      <div>
+        <h3>Nutzen von Zeiger-Event-Handlern</h3>
+        <p><img onmousedown="show();" src="nextarrow.gif" alt="Go to next page"></p>
+      </div>
+    </div>
+
+    <h2><a href="test-cases/2.1.2.html">Erfolgskriterium 2.1.2</a></h2>
+    <div class="container">
+      <h3>Fokussierbares Element mit Keyboard Trap</h3>
+      <a href="#">Link 1</a>
+      <button onblur="setTimeout(() => this.focus(), 10)">
+        Button
+      </button>
+      <a href="#">Link 2</a>
+    </div>
+
+    <h2><a href="test-cases/2.1.4.html">Erfolgskriterium 2.1.4</a></h2>
+    <div class="container" onload="registerShortcut({shortcutKey: '+', disabled: false}); activateShortcuts();">
+      <h3>Nutzen von Keyboard-Shortcuts mit darstellbaren Zeichen</h3>
+      <label for="target">Add to list (press "+" to add):</label>
+      <input type="text" id="target" />
+      <br />
+      <div>
+        To do list
+      </div>
+		  <ul id="list"></ul>
+    </div>
+    
+    <h2><a href="test-cases/2.2.1.html">Erfolgskriterium 2.2.1</a></h2>
+    <div class="container">
+      <h3>Seite lädt nach 30s neu</h3>
+    </div>
+
+    <h2><a href="test-cases/2.2.2.html">Erfolgskriterium 2.2.2</a></h2>
+    <div class="container">
+      <div>
+        <h3>Blinkendes Element durch Skript</h3>
+        <p id="blink">Dieser Text enthält ein blinkendes Element</p>
+      </div>
+  
+      <div>
+        <h3>Blinkendes Element durch CSS</h3>
+        <p style="text-decoration: blink">Dieser Text enthält ein blinkendes Element</p>
+      </div>
+  
+      <div>
+        <h3>Blinkendes HTML-Element</h3>
+        <blink>Dieser Text etnhält ein blinkendes Element</blink>
+      </div>
+  
+      <div>
+        <h3>Text ändert sich automatisch und kann nicht gestoppt werden</h3>
+        <p>Random number: <span id="target">1</span></p>
+      </div>
+    </div>
+
+    <h2><a href="test-cases/2.3.1.html">Erfolgskriterium 2.3.1</a></h2>
+    <div class="container">
+      <h3>Inhalt der mehr als drei Mal pro Sekunde blinkt</h3>
+      <p id="blink2">Dieser Text blinkt drei Mal pro Sekunde</p>
+    </div>
+
+    <h2><a href="test-cases/2.4.1.html">Erfolgskriterium 2.4.1</a></h2>
+    <div class="container">
+      <h3>Inhalt kann nicht übersprungen werden</h3>
+      <aside>Dies ist ein seitlicher Inhalt</aside>
+
+      <div>
+        <strong style="font-size: 18pt">Beispieltitel</strong>
+        <p>Dies ist der Hauptinhalt der Seite.</p>
+      </div>
+    </div>
+    
+    <h2><a href="test-cases/2.4.2.html">Erfolgskriterium 2.4.2</a></h2>
+    <div class="container">
+      <h3>Webseite ohne Titel</h3>
+    </div>
+
+    <h2><a href="test-cases/2.4.3.html">Erfolgskriterium 2.4.3</a></h2>
+    <div class="container">
+      <h3>Tabreihenfolge wurde manipuliert</h3>
+      <ol>
+        <li><a href="test.html" tabindex="1">Test 1</a></li>
+        <li><a href="test2.html" tabindex="4">Test 2</a></li>
+        <li><a href="test3.html" tabindex="3">Test 3</a></li>
+        <li><a href="test4.html" tabindex="2">Test 4</a></li>
+      </ol>
+    </div>
+
+    <h2><a href="test-cases/2.4.4.html">Erfolgskriterium 2.4.4</a></h2>
+    <div class="container">
+      <div>
+        <h3>Zwei Links mit gleichem Text und Kontext, aber zeigen auf verschiedene Ressourcen</h3>
+        <p>W3C pages for ACT:</p>
+        <p><a href="https://act-rules.github.io/">ACT rules</a></p>
+        <p>Community group for ACT:</p>
+        <p><a href="https://www.w3.org/community/act-r/">ACT rules</a></p>
+      </div>
+  
+      <div>
+        <h3>Link hat keinen Text</h3>
+        <a href="http://www.w3.org/WAI"></a>
+      </div>
+    </div>
+
+    <h2><a href="test-cases/2.4.5.html">Erfolgskriterium 2.4.5</a></h2>
+    <div class="container">
+      <h3>Nur eine Möglichkeit um andere Seiten zu erreichen</h3>
+      <ul>
+        <li><a href="test.html">Test 1</a></li>
+        <li><a href="test2.html">Test 2</a></li>
+        <li><a href="test3.html">Test 3</a></li>
+        <li><a href="test4.html">Test 4</a></li>
+      </ul>
+    </div>
+
+    <h2><a href="test-cases/2.4.6.html">Erfolgskriterium 2.4.6</a></h2>
+    <div class="container">
+      <div>
+        <h3>Label-Element für Input hat keine passende Beschreibung</h3>
+        <label>Menu<input id="vorname" type="text" name="vorname"/></label>
+      </div>
+
+      <div>
+        <h3>Heading-Element hat keine passende Beschreibung für Inhalt</h3>
+        <h4>Wetter</h4>
+        <p>Wir haben von 10 Uhr bis 18 Uhr für Sie geöffnet!</p>
+      </div>
+    </div>
+
+    <h2><a href="test-cases/2.4.7.html">Erfolgskriterium 2.4.7</a></h2>
+    <div class="container">
+      <h3>Fokus-Indikator wurde mit CSS abgestellt</h3>
+      <a style="outline: none;" href="test.html">Fokustest</a>
+    </div>
+
+    <h2><a href="test-cases/2.4.11.html">Erfolgskriterium 2.4.11</a></h2>
+    <div class="container">
+      <h3>Sticky footer übereckt Inhalte der Webseite</h3>
+      <footer style="position: fixed; left: 0; bottom: 0; background-color: darkorange;">Sticky footer</footer>
+    </div>
+
+    <h2><a href="test-cases/2.5.1.html">Erfolgskriterium 2.5.1</a></h2>
+    <div class="container">
+      <h3>Keine alternative für Zeiger-Gesten</h3>
+      <input id="range" name="range" type="range" min="0" max="200" value="0">
+      <label for="range">Wählen Sie die passende Zahl aus: </label>
+    </div>
+
+    <h2><a href="test-cases/2.5.2.html">Erfolgskriterium 2.5.2</a></h2>
+    <div class="container">
+      <h3>Button zur Aktivierung beim down-Event</h3>
+      <button id="open">Open</button>
+    </div>
+
+    <h2><a href="test-cases/2.5.3.html">Erfolgskriterium 2.5.3</a></h2>
+    <div class="container">
+      <h3>Aria-Label hat anderen Inhalt als Button</h3>
+      <button aria-label="Finde auf der Seite">Los</button>
+    </div>
+
+    <h2><a href="test-cases/2.5.4.html">Erfolgskriterium 2.5.4</a></h2>
+    <div class="container">
+      <h3>Slider kann nur durch Orientierung des Smartphones angepasst werden</h3>
+      <div class="slidecontainer">
+        <button type="button" name="decrease" onclick="decreaseFunction()">
+          Decrease Value
+        </button>
+        <input
+          type="range"
+          min="1"
+          max="100"
+          value="50"
+          class="slider"
+          id="motionSlider"
+        />
+        <button type="button" name="increase" onclick="increaseFunction()">
+          Increase Value
+        </button>
+        <p aria-live="polite">Slider Value: <span id="demo">56</span></p>
+      </div>
+    </div>
+
+    <h2><a href="test-cases/2.5.7.html">Erfolgskriterium 2.5.7</a></h2>
+    <div class="container">
+      <h3>Liste kann nur durch Pointer reorganisiert werden</h3>
+      <div class="sortable-list">
+        <ul id="sortable">
+            <li draggable="true">Item 1</li>
+            <li draggable="true">Item 2</li>
+            <li draggable="true">Item 3</li>
+        </ul>
+      </div>
+    </div>
+
+    <h2><a href="test-cases/2.5.8.html">Erfolgskriterium 2.5.8</a></h2>
+    <div class="container">
+      <h3>Targets sind kleiner als 24px zu 24px</h3>
+      <nav aria-label="pagination">
+        <ol class="pagination">
+          <li><a href="/1">1</a></li>
+          <li><a href="/2">2</li>
+          <li><a href="/3">3</a></li>
+        </ol>
+      </nav>
+    </div>
+
+    <h2><a href="test-cases/3.1.1.html">Erfolgskriterium 3.1.1</a></h2>
+    <div class="container">
+      <div>
+        <h3>Keine Sprache im HTML-Tag</h3>
+      </div>
+  
+      <div>
+        <h3>xml:lang-Attribut stimmt nicht mit Sprache überein</h3>
+      </div>
+    </div>
+
+    <h2><a href="test-cases/3.1.2.html">Erfolgskriterium 3.1.2</a></h2>
+    <div class="container">
+      <h3>Article-Element hat ungültiges lang-Attribut</h3>
+      <article lang="#!">
+        Dies ist ein beispielhafter Text.
+      </article>
+    </div>
+
+    <h2><a href="test-cases/3.2.1.html">Erfolgskriterium 3.2.1</a></h2>
+    <div class="container">
+      <h3>Fokus wird entfernt sobald Element fokussiert wird</h3>
+      <input type="submit" onFocus="this.blur();">
+    </div>
+
+    <h2><a href="test-cases/3.2.2.html">Erfolgskriterium 3.2.2</a></h2>
+    <div class="container">
+      <h3>Formular wird automatisch abgeschickt, sobald letzter Input getätigt wurde</h3>
+      <form method="get" id="form1">
+        <input type="text" name="text1" size="3" maxlength="3"> - 
+        <input type="text" name="text2" size="3" maxlength="3"> - 
+        <input type="text" name="text3" size="4" maxlength="4" onchange="form1.submit();">
+      </form>
+    </div>
+
+    <h2><a href="test-cases/3.2.3.html">Erfolgskriterium 3.2.3</a></h2>
+    <div class="container">
+      <h3>Nicht anwendbar, da nur eine Seite überprüft wird</h3>
+    </div>
+
+    <h2><a href="test-cases/3.2.4.html">Erfolgskriterium 3.2.4</a></h2>
+    <div class="container">
+      <h3>Nicht anwendbar, da nur eine Seite überprüft wird</h3>
+    </div>
+
+    <h2><a href="test-cases/3.2.6.html">Erfolgskriterium 3.2.6</a></h2>
+    <div class="container">
+      <h3>Nicht anwendbar, da nur eine Seite überprüft wird</h3>
+    </div>
+
+    <h2><a href="test-cases/3.3.1.html">Erfolgskriterium 3.3.1</a></h2>
+    <div class="container">
+      <h3>Falsche Eingabe wird nur farblich dargestellt</h3>
+      <form class="form1" novalidate="">
+        <label for="name">Name: </label>
+        <input name="name" id="name" type="text" placeholder="Eingabe" autocomplete="given-name">
+        <label for="mail">E-Mail: </label>
+        <input name="mail" id="mail" type="email" placeholder="Eingabe" required="" autocomplete="email">
+        <input type="submit" value="Absenden">
+      </form>
+    </div>
+
+    <h2><a href="test-cases/3.3.2.html">Erfolgskriterium 3.3.2</a></h2>
+    <div class="container">
+      <h3>Keine Beschriftung des Inputs</h3>
+      <input type="text">
+    </div>
+
+    <h2><a href="test-cases/3.3.3.html">Erfolgskriterium 3.3.3</a></h2>
+    <div class="container">
+      <h3>Keinen Vorschlag für Korrektur der falschen Eingabe</h3>
+      <form class="form1" novalidate="">
+        <label for="mail">E-Mail: </label>
+        <input name="mail" id="mail" type="email" placeholder="Eingabe" required="" autocomplete="email">
+      </form>
+    </div>
+
+    <h2><a href="test-cases/3.3.4.html">Erfolgskriterium 3.3.4</a></h2>
+    <div class="container">
+      <h3>Nicht anwendbar, da keine rechtlichen Verpflichtungen oder finanzielle Transaktionen vorliegen</h3>
+    </div>
+
+    <h2><a href="test-cases/3.3.7.html">Erfolgskriterium 3.3.7</a></h2>
+    <div class="container">
+      <h3>Zwei Eingabefelder für gleiche Eingabe</h3>
+      <form class="form1" novalidate="">
+        <label for="mail">E-Mail: </label>
+        <input name="mail" id="mail" type="email" placeholder="Eingabe" required="" autocomplete="email">
+        <label for="mail2">E-Mail: </label>
+        <input name="mail2" id="mail2" type="email" placeholder="Eingabe" required="" autocomplete="email">
+      </form>
+    </div>
+
+    <h2><a href="test-cases/3.3.8.html">Erfolgskriterium 3.3.8</a></h2>
+    <div class="container">
+      <h3>Verifikationscode aufgeteilt auf drei Eingabefelder</h3>
+      <form class="form1" novalidate="">
+        <label for="dig1">Digit 1: </label>
+        <input name="dig1" id="dig1" type="number" placeholder="Eingabe 1" required="">
+        <label for="dig2">Digit 2: </label>
+        <input name="dig2" id="dig2" type="number" placeholder="Eingabe 2" required="">
+        <label for="dig3">Digit 3: </label>
+        <input name="dig3" id="dig3" type="number" placeholder="Eingabe 3" required="">
+      </form>
+    </div>
+
+    <h2><a href="test-cases/4.1.1.html">Erfolgskriterium 4.1.1</a></h2>
+    <div class="container">
+      <h3>Doppelte IDs</h3>
+      <span id="doubleid">Erstes Element mit ID=doubleid</span>
+      <span id="doubleid">Zweiter Element mit ID=doubleid</span>
+    </div>
+
+    <h2><a href="test-cases/4.1.2.html">Erfolgskriterium 4.1.2</a></h2>
+    <div class="container">
+      <div>
+        <h3>Label ohne Verknüpfung zum Eingabefeld</h3>
+        <form> 
+          <p> 
+            <label>First Name</label>
+            <input type="text" name="firstname"> 
+            <label>Last Name</label> 
+            <input type="text" name="lastname"> 
+          </p> 
+        </form>
+      </div>
+  
+      <div>
+        <h3>Button ohne Name</h3>
+        <button></button>
+      </div>
+  
+      <div>
+        <h3>Navigations-Element ist verdeckt und fokussierbar</h3>
+        <div aria-hidden="true">
+          <a href="/" style="position:absolute; top:-999em">Link</a>
+        </div>
+      </div>
+  
+      <div>
+        <h3>Button mit fokussierbarem Child-Element</h3>
+        <button>
+          Speichern
+          <span role="button" aria-label="save options" aria-expanded="false" tabindex="0">▼</span>
+        </button>
+      </div>
+  
+      <div>
+        <h3>iframe ohne zugänglichen Namen</h3>
+        <iframe src="test.html"> </iframe>
+      </div>
+    </div>
+
+    <h2><a href="test-cases/4.1.3.html">Erfolgskriterium 4.1.3</a></h2>
+    <div class="container">
+      <h3>Darstellung des Suchergebnisses ohne role="status"</h3>
+      <label for="search">Sucheingabe: <input type="text" id="search" name="search" value="test"></label>
+      <button onclick="findResults()">Suche</button>
+      <span id="results"></span>
+    </div>
+    <script>
+
+      function load() {
+        startUpdates() 
+        registerShortcut({shortcutKey: '+', disabled: false})
+        activateShortcuts()
+      }
+
+      function findResults() {
+        document.getElementById("results").innerText = "Keine Ergebnisse gefunden";
+      }
+
+      // https://www.w3.org/WAI/WCAG22/working-examples/device-motion-sensor-input-failure/
+      var slider = document.getElementById("motionSlider");
+      var output = document.getElementById("demo");
+      output.innerHTML = slider.value;
+      slider.oninput = function () {
+        output.innerHTML = this.value;
+      };
+
+      function increaseFunction() {
+        slider.value++;
+        output.innerHTML = slider.value;
+      }
+      function decreaseFunction() {
+        slider.value--;
+        output.innerHTML = slider.value;
+      }
+
+      //slider motion detection
+      function handleOrientation(event) {
+        var x = event.gamma;
+
+        if (x > 20) {
+          slider.value++;
+          output.innerHTML = slider.value;
+        } else if (x < -20) {
+          slider.value--;
+          output.innerHTML = slider.value;
+        }
+      }
+
+      window.addEventListener("deviceorientation", handleOrientation);
+
+      // https://www.w3.org/WAI/content-assets/wcag-act-rules/testcases/efbfc7/8f0a05348afb0a218f3934157dad1b4d1673ea6a.html
+      function change() {
+        var target = document.getElementById('target')
+        var number = Math.random() * 1000
+        target.innerText = number
+      }
+
+      var updates
+      var updating = false
+
+      function startUpdates() {
+        updating = true
+        updates = setInterval(change, 1000)
+      }
+
+      function stopUpdates() {
+        updating = false
+        clearInterval(updates)
+      }
+
+      function changeFrequency(interval = 1) {
+        clearInterval(updates)
+        updates = startUpdates(interval * 1000)
+      }
+
+      function toggleUpdates() {
+        var control = document.getElementById('control')
+        if (updating) {
+          control.value = 'Resume changes'
+          updating = false
+          clearInterval(updates)
+        } else {
+          control.value = 'Pause changes'
+          updating = true
+          updates = setInterval(change, 1000)
+        }
+      }
+
+      function hide() {
+        var target = document.getElementById('target')
+        target.style.visibility = 'hidden'
+      }
+
+      const show = () => {
+        window.alert("Testnachricht")
+      }
+  
+      // https://www.w3.org/WAI/content-assets/wcag-act-rules/testcases/ffbc54/5824a1b3c92824e9ac93f1ca91e743deb6ca795e.html
+      const defaultParams = {
+        target: 'target',
+        focusOnly: false,
+        shortcutKey: '',
+        ctrlKey: false,
+        disabled: false,
+      }
+  
+      const shortcutDefinitions = new Array()
+  
+      function activateShortcuts() {
+        document.body.addEventListener('keydown', function(event) {
+          for (const settings of shortcutDefinitions) {
+            if (!settings.disabled) {
+              const target = document.getElementById(settings.target)
+  
+              if (
+                event.key === settings.shortcutKey &&
+                (!settings.ctrlKey || event.getModifierState('Control')) &&
+                (!settings.focusOnly || document.activeElement === target)
+              ) {
+                document.getElementById('list').innerHTML += '<li>' + target.value + '</li>'
+                target.value = ''
+                event.preventDefault()
+              }
+            }
+          }
+        })
+      }
+  
+      function registerShortcut(params = {}) {
+        shortcutDefinitions.push({ ...defaultParams, ...params })
+      }
+  
+      function changeShortcutParameter(id, param, value) {
+        shortcutDefinitions.find(shortcut => shortcut.id === id)[param] = value
+      }
+  
+      function toggleDisabled(id, value) {
+        changeShortcutParameter(id, 'disabled', value)
+      }
+  
+      function toggleModifier(id, value) {
+        changeShortcutParameter(id, 'ctrlKey', value)
+      }
+  
+      function openModal() {
+        document.getElementById('overlay').style.display = 'block'
+      }
+      function closeModal() {
+        document.getElementById('overlay').style.display = 'none'
+      }
+  
+      var blink = document.getElementById('blink')
+      setInterval(function() {
+          blink.style.opacity = (blink.style.opacity == 0 ? 1 : 0)
+      }, 500)
+
+      var blink2 = document.getElementById('blink2')
+      setInterval(function() {
+          blink2.style.background = (blink2.style.background == "white" ? "black" : "white")
+      }, 200)
+
+      const trigger = document.getElementById("open");
+
+      function openAlert() {
+        window.alert("Test")
+      }
+
+      trigger.addEventListener('mousedown', openAlert);
+      trigger.addEventListener('touchstart', openAlert);
+      trigger.addEventListener('pointerdown', openAlert);
+
+
+      // https://www.geeksforgeeks.org/create-a-drag-and-drop-sortable-list-using-html-css-javascript/
+      const sortableList = document.getElementById("sortable");
+      let draggedItem = null;
+      
+      sortableList.addEventListener(
+          "dragstart",
+          (e) => {
+              draggedItem = e.target;
+              setTimeout(() => {
+                  e.target.style.display =
+                      "none";
+              }, 0);
+      });
+      
+      sortableList.addEventListener(
+          "dragend",
+          (e) => {
+              setTimeout(() => {
+                  e.target.style.display = "";
+                  draggedItem = null;
+              }, 0);
+      });
+      
+      sortableList.addEventListener(
+          "dragover",
+          (e) => {
+              e.preventDefault();
+              const afterElement =
+                  getDragAfterElement(
+                      sortableList,
+                      e.clientY);
+              const currentElement =
+                  document.querySelector(
+                      ".dragging");
+              if (afterElement == null) {
+                  sortableList.appendChild(
+                      draggedItem
+                  );} 
+              else {
+                  sortableList.insertBefore(
+                      draggedItem,
+                      afterElement
+                  );}
+          });
+      
+      const getDragAfterElement = (
+          container, y
+      ) => {
+          const draggableElements = [
+              ...container.querySelectorAll(
+                  "li:not(.dragging)"
+              ),];
+      
+          return draggableElements.reduce(
+              (closest, child) => {
+                  const box =
+                      child.getBoundingClientRect();
+                  const offset =
+                      y - box.top - box.height / 2;
+                  if (
+                      offset < 0 &&
+                      offset > closest.offset) {
+                      return {
+                          offset: offset,
+                          element: child,
+                      };} 
+                  else {
+                      return closest;
+                  }},
+              {
+                  offset: Number.NEGATIVE_INFINITY,
+              }
+          ).element;
+      };
+
+      // 1.4.13
+      var focusable = document.querySelector('.focusable')
+      focusable.addEventListener('focus', function() {
+        document.querySelector('.tooltiptext').style.visibility = 'visible'
+      })
+      focusable.addEventListener('blur', function() {
+        document.querySelector('.tooltiptext').style.visibility = 'hidden'
+      })
+    </script>
+  </body>
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Erfolgskriterium 2.2.2</title>
+  </head>
+  <body onload="startUpdates()">
+    <h1>Erfolgskriterium 2.2.2</h1>
+    <div>
+      <!-- F50: https://www.w3.org/WAI/WCAG22/Techniques/failures/F50.html -->
+      <h2>Blinkendes Element durch Skript</h2>
+      <p id="blink">Dieser Text enthält ein blinkendes Element</p>
+    </div>
+
+    <div>
+      <!-- F4: https://www.w3.org/WAI/WCAG22/Techniques/failures/F4.html -->
+      <h2>Blinkendes Element durch CSS</h2>
+      <p style="text-decoration:blink">
+        Dieser Text enthält ein blinkendes Element
+      </p>
+    </div>
+
+    <div>
+      <!-- F47: https://www.w3.org/WAI/WCAG22/Techniques/failures/F47.html -->
+      <h2>Blinkendes HTML-Element</h2>
+      <blink>Dieser Text etnhält ein blinkendes Element</blink>
+    </div>
+
+    <div>
+      <!-- https://www.w3.org/WAI/standards-guidelines/act/rules/efbfc7/proposed/ -->
+      <h2>Text ändert sich automatisch und kann nicht gestoppt werden</h2>
+      <p>Random number: <span id="target">1</span></p>
+    </div>
+  </body>
+  <script>
+    var blink = document.getElementById("blink");
+    setInterval(function () {
+      blink.style.opacity = blink.style.opacity == 0 ? 1 : 0;
+    }, 500);
+
+    // https://www.w3.org/WAI/content-assets/wcag-act-rules/testcases/efbfc7/8f0a05348afb0a218f3934157dad1b4d1673ea6a.html
+    function change() {
+      var target = document.getElementById("target");
+      var number = Math.random() * 1000;
+      target.innerText = number;
+    }
+
+    var updates;
+    var updating = false;
+
+    function startUpdates() {
+      updating = true;
+      updates = setInterval(change, 1000);
+    }
+
+    function stopUpdates() {
+      updating = false;
+      clearInterval(updates);
+    }
+
+    function changeFrequency(interval = 1) {
+      clearInterval(updates);
+      updates = startUpdates(interval * 1000);
+    }
+
+    function toggleUpdates() {
+      var control = document.getElementById("control");
+      if (updating) {
+        control.value = "Resume changes";
+        updating = false;
+        clearInterval(updates);
+      } else {
+        control.value = "Pause changes";
+        updating = true;
+        updates = setInterval(change, 1000);
+      }
+    }
+  </script>
+</html>

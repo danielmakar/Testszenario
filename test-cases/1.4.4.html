@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="user-scalable=no" />
+    <title>Erfolgskriterium 1.4.4</title>
+  </head>
+  <body>
+    <h1>Erfolgskriterium 1.4.4</h1>
+    <div>
+      <!-- F69: https://www.w3.org/WAI/WCAG22/Techniques/failures/F69.html -->
+      <h2>Überlaufender Text</h2>
+      <div
+        style="
+          font-size: 100%;
+          max-width: 20vh;
+          max-height: 20vh;
+          border: thin solid black;
+        "
+      >
+        Dies ist ein beispielhafter Text und er muss deutlich länger sein, damit es zu einem Problem kommt.
+      </div>
+      <p>Anderer Text der vom vorherigen überschrieben wird.</p>
+    </div>
+
+    <div>
+      <!-- F80: https://www.w3.org/WAI/WCAG22/Techniques/failures/F80.html -->
+      <h2>Formular-Elemente skalieren nicht mit</h2>
+      <div>
+        <label style="font-size: 1em" for="fname">First Name</label>
+        <input style="font-size: 1vh" type="text" id="fname" />
+        <input style="font-size: 1vh" type="submit" value="Submit" id="Submit">
+      </div>
+    </div>
+
+    <div>
+      <!-- F94: https://www.w3.org/WAI/WCAG22/Techniques/failures/F94.html -->
+      <h2>Viewport zur Skalierung des Textes</h2>
+      <p style="font-size: 1vh">Text skaliert mit VH-Einheit</p>
+    </div>
+
+    <div>
+      <!-- https://www.w3.org/WAI/standards-guidelines/act/rules/b4f0c3/ -->
+      <h2>Nicht skalierbarer Viewport</h2>
+    </div>
+  </body>
+</html>

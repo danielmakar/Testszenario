@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Erfolgskriterium 3.3.8</title>
+  </head>
+  <style>
+    .form1 input:valid {
+      border: 2px solid green;
+    }
+
+    .form1 input:invalid {
+      border: 2px solid red;
+    }
+  </style>
+  <body>
+    <h1>Erfolgskriterium 3.3.8</h1>
+    <div>
+      <!-- F109: https://www.w3.org/WAI/WCAG22/Techniques/failures/F109.html -->
+      <h2>Verifikationscode aufgeteilt auf drei Eingabefelder</h2>
+      <form class="form1" novalidate="">
+        <label for="dig1">Digit 1: </label>
+        <input
+          name="dig1"
+          id="dig1"
+          type="number"
+          placeholder="Eingabe 1"
+          required=""
+        />
+        <label for="dig2">Digit 2: </label>
+        <input
+          name="dig2"
+          id="dig2"
+          type="number"
+          placeholder="Eingabe 2"
+          required=""
+        />
+        <label for="dig3">Digit 3: </label>
+        <input
+          name="dig3"
+          id="dig3"
+          type="number"
+          placeholder="Eingabe 3"
+          required=""
+        />
+      </form>
+    </div>
+  </body>
+</html>

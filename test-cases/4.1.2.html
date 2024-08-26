@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Erfolgskriterium 4.1.2</title>
+  </head>
+  <body>
+    <h1>Erfolgskriterium 4.1.2</h2>
+    <div>
+      <!-- F68: https://www.w3.org/WAI/WCAG22/Techniques/failures/F68.html -->
+      <h2>Label ohne Verknüpfung zum Eingabefeld</h2>
+      <form>
+        <p>
+          <label>First Name</label>
+          <input type="text" name="firstname" />
+          <label>Last Name</label>
+          <input type="text" name="lastname" />
+        </p>
+      </form>
+    </div>
+
+    <div>
+      <!-- https://www.w3.org/WAI/standards-guidelines/act/rules/97a4e1/ -->
+      <h2>Button ohne Name</h2>
+      <button></button>
+    </div>
+
+    <div>
+      <!-- https://www.w3.org/WAI/standards-guidelines/act/rules/6cfa84/ -->
+      <h2>Navigations-Element ist verdeckt und fokussierbar</h2>
+      <div aria-hidden="true">
+        <a href="/" style="position: absolute; top: -999em">Link</a>
+      </div>
+    </div>
+
+    <div>
+      <!-- https://www.w3.org/WAI/standards-guidelines/act/rules/307n5z/ -->
+      <h2>Button mit fokussierbarem Child-Element</h2>
+      <button>
+        Speichern
+        <span
+          role="button"
+          aria-label="save options"
+          aria-expanded="false"
+          tabindex="0"
+          >▼</span
+        >
+      </button>
+    </div>
+
+    <div>
+      <!-- https://www.w3.org/WAI/standards-guidelines/act/rules/cae760/proposed/ -->
+      <h2>iframe ohne zugänglichen Namen</h2>
+      <iframe src="../test.html"> </iframe>
+    </div>
+  </body>
+</html>

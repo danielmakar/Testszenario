@@ -40,6 +40,7 @@
   </style>
   <body>
     <h1>Erfolgskriterium 1.4.13</h1>
+    <!-- https://www.w3.org/WAI/WCAG22/Understanding/content-on-hover-or-focus.html -->
     <div>
       <h2>Hover verdeckt anderes Element</h2>
       <div class="tooltip">
@@ -59,63 +60,3 @@
     })
   </script>
 </html>
-<!-- <!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Hover Beispiel</title>
-<style>
-  /* Grundstil für die Elemente */
-  .original, .hover-element {
-    width: 200px;
-    height: 200px;
-    text-align: center;
-    line-height: 200px;
-    margin: 10px;
-  }
-
-  .original {
-    background-color: lightblue;
-    position: relative;
-  }
-
-  .hover-element {
-    background-color: lightcoral;
-    display: none;
-    position: absolute;
-    top: 0;
-    left: 0;
-  }
-</style>
-</head>
-<body>
-
-<div class="original" id="original">
-  Original Element
-  <div class="hover-element" id="hoverElement">
-    Hover Element
-  </div>
-</div>
-
-<script>
-  document.getElementById('original').addEventListener('mouseenter', function() {
-    document.getElementById('hoverElement').style.display = 'block';
-  });
-
-  document.getElementById('original').addEventListener('mouseleave', function() {
-    setTimeout(function() {
-      var hoverElement = document.getElementById('hoverElement');
-      if (!hoverElement.matches(':hover')) {
-        hoverElement.style.display = 'none';
-      }
-    }, 100);
-  });
-
-  document.getElementById('hoverElement').addEventListener('mouseenter', function() {
-    this.style.display = 'none';
-  });
-</script>
-
-</body>
-</html> -->
